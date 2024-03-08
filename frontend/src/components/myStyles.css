@@ -21,8 +21,32 @@
   flex: 0.7;
 }
 
-.sb-header {
+.sb-header,
+.sb-search {
   background-color: white;
   border-radius: 17px;
   padding: 10px 5px;
+  margin: 10px;
+  display: flex;
+}
+
+.sb-header {
+  justify-content: space-between;
+}
+
+.sb-search {
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.sb-search input {
+  margin: 0 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+.sb-search input:active {
+  outline: none;
 }

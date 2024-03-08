@@ -7,6 +7,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import NightlightIcon from "@mui/icons-material/Nightlight";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Sidebar = () => {
   return (
@@ -15,20 +16,28 @@ const Sidebar = () => {
         <IconButton>
           <AccountCircleIcon />
         </IconButton>
-        <IconButton>
-          <PersonAddIcon />
-        </IconButton>
-        <IconButton>
-          <GroupAddIcon />
-        </IconButton>
-        <IconButton>
-          <AddCircleIcon />
-        </IconButton>
-        <IconButton>
-          <NightlightIcon />
-        </IconButton>
+
+        <div>
+          <IconButton>
+            <PersonAddIcon />
+          </IconButton>
+          <IconButton>
+            <GroupAddIcon />
+          </IconButton>
+          <IconButton>
+            <AddCircleIcon />
+          </IconButton>
+          <IconButton>
+            <NightlightIcon />
+          </IconButton>
+        </div>
       </div>
-      <div className="sb-search">Search</div>
+      <div className="sb-search">
+        <IconButton>
+          <SearchIcon />
+        </IconButton>
+        <input placeholder="Search" />
+      </div>
       <div className="sb-conversations">Conversations</div>
     </div>
   );
