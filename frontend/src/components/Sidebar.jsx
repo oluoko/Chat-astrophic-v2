@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./myStyles.css";
 import { IconButton } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -87,30 +87,11 @@ const Sidebar = () => {
         <input placeholder="Search" />
       </div>
       <div className="sb-conversations">
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
-        <ConversationsItem />
+        {conversations.map((conversation) => {
+          return (
+            <ConversationsItem props={conversation} key={conversation.name} />
+          );
+        })}
       </div>
     </div>
   );
