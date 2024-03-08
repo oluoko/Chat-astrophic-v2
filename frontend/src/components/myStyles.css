@@ -55,6 +55,14 @@
   outline: none;
 }
 
+.search-box {
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .sb-conversations {
   overflow: scroll;
   scrollbar-width: none;
@@ -117,10 +125,24 @@
 .chatarea-container {
   display: flex;
   flex-direction: column;
+  flex: 0.7;
 }
 
 .chatarea-header {
-  background-color: orange;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 10px 10px;
+  margin: 2px;
+  border-radius: 17px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
 }
 
 .messages-container {
@@ -129,5 +151,10 @@
 }
 
 .text-input-area {
-  background-color: yellow;
+  background-color: white;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 17px;
+  display: flex;
+  justify-content: space-between;
 }
