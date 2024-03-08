@@ -3,6 +3,8 @@ import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import { IconButton } from "@mui/material";
+import MessageOthers from "./MessageOthers";
+import MessageSelf from "./MessageSelf";
 
 const ChatArea = ({ props }) => {
   return (
@@ -17,7 +19,10 @@ const ChatArea = ({ props }) => {
           <DeleteIcon />
         </IconButton>
       </div>
-      <div className="messages-container">Messages Container</div>
+      <div className="messages-container">
+        <MessageOthers />
+        <MessageSelf />
+      </div>
       <div className="text-input-area">
         <input placeholder="Type a message" className="search-box" />
         <IconButton>
