@@ -1,6 +1,23 @@
 .main-container {
   background-color: #f4f5f8;
-  height: 90vh;
+  height: 93vh;
   width: 90vw;
   border-radius: 17px;
+  display: flex;
+}
+
+.sidebar-container,
+.chatarea-container {
+  margin: 8px;
+  border-radius: 17px;
+}
+
+.sidebar-container {
+  border: 5px solid red;
+  flex: 0.3;
+}
+
+.chatarea-container {
+  border: 5px solid green;
+  flex: 0.7;
 }
