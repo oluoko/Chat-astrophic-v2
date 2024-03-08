@@ -13,11 +13,16 @@
 }
 
 .sidebar-container {
-  border: 5px solid red;
   flex: 0.3;
 }
 
 .chatarea-container {
-  border: 5px solid green;
+  background-color: aliceblue;
   flex: 0.7;
+}
+
+.sb-header {
+  background-color: white;
+  border-radius: 17px;
+  padding: 10px 5px;
 }
