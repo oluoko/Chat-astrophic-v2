@@ -13,16 +13,20 @@ const Login = () => {
         <p>Login to you Account</p>
         <TextField
           id="outlined-basic"
+          className="login-input"
           label="Enter Your Username"
           variant="outlined"
         />
         <TextField
           id="outlined-basic"
           label="Password"
+          className="login-input"
           type="password"
           variant="outlined"
         />
-        <Button variant="outlined">Log In</Button>
+        <Button className="login-input button" variant="outlined">
+          Log In
+        </Button>
       </div>
     </div>
   );
