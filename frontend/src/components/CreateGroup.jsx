@@ -12,9 +12,9 @@ const CreateGroup = () => {
         placeholder="Enter Group Name"
         className="search-box"
       />
-      <IconButton>
+      {/* <IconButton>
         <AddBoxRoundedIcon />
-      </IconButton>
+      </IconButton> */}
       <IconButton>
         <DoneOutlineRoundedIcon />
       </IconButton>
