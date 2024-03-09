@@ -221,8 +221,22 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin: 10px;
+  border-bottom: 5px solid #63d7b0;
+  border-radius: 17px;
 }
 
 .welcome-logo {
   height: 50vh;
+}
+
+.createGroups {
+  flex: 0.7;
+  align-self: center;
+  padding: 20px 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 17px;
+  display: flex;
+  justify-content: space-between;
 }

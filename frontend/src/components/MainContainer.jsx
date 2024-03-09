@@ -3,6 +3,7 @@ import "./myStyles.css";
 import Sidebar from "./Sidebar";
 import ChatArea from "./ChatArea";
 import Welcome from "./Welcome";
+import CreateGroup from "./CreateGroup";
 
 const MainContainer = () => {
   const [chatData, setChatData] = useState([
@@ -31,7 +32,8 @@ const MainContainer = () => {
     <div className="main-container">
       <Sidebar />
       {/* <ChatArea props={chatData[1]} /> */}
-      <Welcome />
+      <CreateGroup />
+      {/* <Welcome /> */}
     </div>
   );
 };
