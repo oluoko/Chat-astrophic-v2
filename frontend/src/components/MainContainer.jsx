@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./myStyles.css";
 import Sidebar from "./Sidebar";
 import ChatArea from "./ChatArea";
+import Welcome from "./Welcome";
 
 const MainContainer = () => {
   const [chatData, setChatData] = useState([
@@ -29,7 +30,8 @@ const MainContainer = () => {
   return (
     <div className="main-container">
       <Sidebar />
-      <ChatArea props={chatData[1]} />
+      {/* <ChatArea props={chatData[1]} /> */}
+      <Welcome />
     </div>
   );
 };

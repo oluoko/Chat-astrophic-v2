@@ -1,5 +1,6 @@
 * {
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .main-container {
@@ -23,7 +24,7 @@
 }
 
 .chatarea-container {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   flex: 0.7;
 }
 
@@ -112,7 +113,6 @@
   grid-area: 1/2/2/4;
   adding: 10px;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 .con-timestamp,
@@ -122,7 +122,6 @@
 
 .con-timestamp {
   justify-self: flex-end;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 .chatarea-container {
@@ -213,4 +212,17 @@
   align-self: flex-end;
   font-size: 0.75rem;
   font-weight: lighter;
+}
+
+.welcome-container {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-logo {
+  height: 50vh;
 }
