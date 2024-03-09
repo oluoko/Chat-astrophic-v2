@@ -22,6 +22,30 @@ const ChatArea = ({ props }) => {
       <div className="messages-container">
         <MessageOthers />
         <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
+        <MessageOthers />
+        <MessageSelf />
       </div>
       <div className="text-input-area">
         <input placeholder="Type a message" className="search-box" />

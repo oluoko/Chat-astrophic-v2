@@ -110,6 +110,7 @@
 
 .con-title {
   grid-area: 1/2/2/4;
+  adding: 10px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.54);
 }
@@ -148,7 +149,13 @@
 }
 
 .messages-container {
+  overflow: scroll;
+  scrollbar-width: none;
   flex: 1;
+}
+
+.messages-container::-webkit-scrollbar {
+  display: none;
 }
 
 .text-input-area {
@@ -181,6 +188,14 @@
   flex-direction: column;
   width: max-content;
   border-radius: 17px;
+}
+
+.messo .con-lastMessage {
+  font-size: 1.2rem;
+}
+
+.messo:last-child {
+  margin-bottom: 15px;
 }
 
 .messageBox {
