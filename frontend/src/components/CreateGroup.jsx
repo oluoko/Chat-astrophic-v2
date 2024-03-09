@@ -6,7 +6,7 @@ import { IconButton } from "@mui/material";
 
 const CreateGroup = () => {
   return (
-    <div className="createGroups">
+    <div className="createGroups-container">
       <input
         type="text"
         placeholder="Enter Group Name"
