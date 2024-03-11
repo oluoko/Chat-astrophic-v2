@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ConversationsItem from "./ConversationsItem";
+import logo from "../assets/logo.png";
 
 const Users_Groups = () => {
   const [conversations, setConversations] = useState([
@@ -33,7 +34,9 @@ const Users_Groups = () => {
   ]);
   return (
     <div className="list-container">
-      <div className="sb-header"></div>
+      <div className="ug-header">
+        <img src={logo} alt="logo" style={{ height: "2rem", width: "2rem" }} />
+      </div>
       <div className="sb-search">
         <IconButton>
           <SearchIcon />

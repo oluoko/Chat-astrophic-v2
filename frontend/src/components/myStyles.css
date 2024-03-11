@@ -296,3 +296,13 @@
 .list-container {
   flex: 0.7;
 }
+
+.ug-header {
+  background-color: white;
+  border-radius: 17px;
+  padding: 10px 5px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+}
