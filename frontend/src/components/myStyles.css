@@ -292,3 +292,7 @@
   width: 60%;
   height: 10%;
 }
+
+.list-container {
+  flex: 0.7;
+}

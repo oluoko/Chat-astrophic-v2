@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import ChatArea from "./ChatArea";
 import Welcome from "./Welcome";
 import CreateGroup from "./CreateGroup";
+import Users_Groups from "./Users_Groups";
 
 const MainContainer = () => {
   const [chatData, setChatData] = useState([
@@ -31,7 +32,9 @@ const MainContainer = () => {
   return (
     <div className="main-container">
       <Sidebar />
-      <ChatArea props={chatData[1]} />
+
+      <Users_Groups />
+      {/* <ChatArea props={chatData[1]} /> */}
       {/* <CreateGroup /> */}
       {/* <Welcome /> */}
     </div>
