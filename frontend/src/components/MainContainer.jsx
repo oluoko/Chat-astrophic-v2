@@ -31,9 +31,9 @@ const MainContainer = () => {
   return (
     <div className="main-container">
       <Sidebar />
-      {/* <ChatArea props={chatData[1]} /> */}
+      <ChatArea props={chatData[1]} />
       {/* <CreateGroup /> */}
-      <Welcome />
+      {/* <Welcome /> */}
     </div>
   );
 };
