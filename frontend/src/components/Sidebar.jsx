@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../src/index.css";
 import "./myStyles.css";
 import { IconButton } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";

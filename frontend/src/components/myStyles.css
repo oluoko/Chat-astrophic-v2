@@ -9,6 +9,7 @@
   width: 90vw;
   border-radius: 17px;
   display: flex;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .sidebar-container,
@@ -112,7 +113,7 @@
 
 .con-title {
   grid-area: 1/2/2/4;
-  adding: 10px;
+  padding: 10px;
   font-weight: bold;
 }
 
@@ -139,6 +140,8 @@
   padding: 10px 10px;
   margin: 2px;
   border-radius: 17px;
+  box-shadow: var(--box-shadow);
+  z-index: 5;
 }
 
 .header-text {
@@ -165,6 +168,8 @@
   border-radius: 17px;
   display: flex;
   justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  z-index: 5;
 }
 
 .other-text-content {
