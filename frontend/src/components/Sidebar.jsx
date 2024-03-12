@@ -9,6 +9,7 @@ import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import SearchIcon from "@mui/icons-material/Search";
 import ConversationsItem from "./ConversationsItem";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [conversations, setConversations] = useState([
@@ -58,6 +59,8 @@ const Sidebar = () => {
       timeStamp: "today",
     },
   ]);
+
+  const navigate = useNavigate();
   return (
     <div className="sidebar-container">
       <div className="sb-header">
@@ -66,7 +69,7 @@ const Sidebar = () => {
         </IconButton>
 
         <div>
-          <IconButton>
+          <IconButton onClick={() => navigate("users")}>
             <PersonAddIcon />
           </IconButton>
           <IconButton>
