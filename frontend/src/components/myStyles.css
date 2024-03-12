@@ -295,6 +295,8 @@
 
 .list-container {
   flex: 0.7;
+  display: flex;
+  flex-direction: column;
 }
 
 .ug-header {
@@ -305,4 +307,35 @@
   display: flex;
   justify-content: space-between;
   box-shadow: var(--box-shadow);
+}
+
+.ug-title {
+  margin-left: 10px;
+  font-weight: bolder;
+}
+
+.ug-list {
+  flex: 1;
+  overflow: scroll;
+  scrollbar-width: none;
+  padding: 10px;
+}
+
+.ug-list::-webkit-scrollbar {
+  display: none;
+}
+
+.list-tem {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 17px;
+  padding: 10px 5px;
+  margin: 10px;
+  transition-duration: 0.5s;
+}
+
+.list-tem:hover {
+  background-color: rgb(226, 226, 226);
 }

@@ -5,37 +5,11 @@ import ConversationsItem from "./ConversationsItem";
 import logo from "../assets/logo.png";
 
 const Users_Groups = () => {
-  const [conversations, setConversations] = useState([
-    {
-      name: "Test #1",
-      lastMessage: "Hey! How are",
-      timeStamp: "today",
-    },
-    {
-      name: "Test #2",
-      lastMessage: "Hey! How are",
-      timeStamp: "today",
-    },
-    {
-      name: "Test #3",
-      lastMessage: "Hey! How are",
-      timeStamp: "today",
-    },
-    {
-      name: "Test #4",
-      lastMessage: "Hey! How are",
-      timeStamp: "today",
-    },
-    {
-      name: "Test #5",
-      lastMessage: "Hey! How are",
-      timeStamp: "today",
-    },
-  ]);
   return (
     <div className="list-container">
       <div className="ug-header">
         <img src={logo} alt="logo" style={{ height: "2rem", width: "2rem" }} />
+        <p className="ug-title">Online Users</p>
       </div>
       <div className="sb-search">
         <IconButton>
@@ -43,12 +17,43 @@ const Users_Groups = () => {
         </IconButton>
         <input type="text" placeholder="Search..." className="search-box" />
       </div>
-      <div className="sb-conversations">
-        {conversations.map((conversation) => {
-          return (
-            <ConversationsItem props={conversation} key={conversation.name} />
-          );
-        })}
+      <div className="ug-list">
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
+        <div className="list-tem">
+          <p className="con-icon">T</p>
+          <p className="con-title">Test User</p>
+        </div>
       </div>
     </div>
   );
