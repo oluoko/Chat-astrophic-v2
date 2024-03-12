@@ -9,7 +9,7 @@ const Users_Groups = () => {
     <div className="list-container">
       <div className="ug-header">
         <img src={logo} alt="logo" style={{ height: "2rem", width: "2rem" }} />
-        <p className="ug-title">Online Users</p>
+        <p className="ug-title">Available Groups</p>
       </div>
       <div className="sb-search">
         <IconButton>
