@@ -72,10 +72,10 @@ const Sidebar = () => {
           <IconButton onClick={() => navigate("users")}>
             <PersonAddIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => navigate("groups")}>
             <GroupAddIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => navigate("create-groups")}>
             <AddCircleIcon />
           </IconButton>
           <IconButton>
