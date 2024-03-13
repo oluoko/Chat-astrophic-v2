@@ -3,6 +3,7 @@ import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ConversationsItem from "./ConversationsItem";
 import logo from "../assets/logo.png";
+import { motion } from "framer-motion";
 
 const Users_Groups = () => {
   return (
@@ -18,42 +19,10 @@ const Users_Groups = () => {
         <input type="text" placeholder="Search..." className="search-box" />
       </div>
       <div className="ug-list">
-        <div className="list-tem">
+        <motion.div whileHover={{ scale: 1.2 }} className="list-tem">
           <p className="con-icon">T</p>
           <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
-        <div className="list-tem">
-          <p className="con-icon">T</p>
-          <p className="con-title">Test Group</p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
