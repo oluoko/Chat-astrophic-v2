@@ -1,10 +1,11 @@
 * {
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
   color: var(--primary-text-color);
 }
 
 .main-container {
-  background-color: var(--background-color);
+  background-color: var(--background-color) !important;
   height: 93vh;
   width: 90vw;
   border-radius: 17px;
@@ -107,8 +108,8 @@
   font-size: 2rem;
   font-weight: bolder;
   color: var(--primary-text-color);
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: 40px;
   padding: 2px;
 
   border-radius: 50%;
@@ -135,13 +136,13 @@
   display: flex;
   flex-direction: column;
   flex: 0.7;
+  background-color: var(--foreground-color);
 }
 
 .chatarea-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--foreground-color);
   padding: 10px 10px;
   margin: 2px;
   border-radius: 17px;
@@ -160,6 +161,7 @@
   overflow: scroll;
   scrollbar-width: none;
   flex: 1;
+  padding: 10px 15px;
 }
 
 .messages-container::-webkit-scrollbar {
@@ -175,6 +177,11 @@
   justify-content: space-between;
   box-shadow: var(--box-shadow);
   z-index: 5;
+}
+
+.text-input-area input {
+  background-color: inherit;
+  color: var(--primary-text-color);
 }
 
 .other-text-content {
