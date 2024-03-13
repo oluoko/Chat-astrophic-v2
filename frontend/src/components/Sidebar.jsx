@@ -69,7 +69,7 @@ const Sidebar = ({ isdark, setisdark }) => {
           <AccountCircleIcon />
         </IconButton>
 
-        <div>
+        <div className="other-icons">
           <IconButton onClick={() => navigate("users")}>
             <PersonAddIcon />
           </IconButton>
