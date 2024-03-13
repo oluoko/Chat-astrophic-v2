@@ -7,11 +7,12 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import NightlightIcon from "@mui/icons-material/Nightlight";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import SearchIcon from "@mui/icons-material/Search";
 import ConversationsItem from "./ConversationsItem";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ isdark, setisdark }) => {
   const [conversations, setConversations] = useState([
     {
       name: "Test #1",
@@ -78,8 +79,8 @@ const Sidebar = () => {
           <IconButton onClick={() => navigate("create-groups")}>
             <AddCircleIcon />
           </IconButton>
-          <IconButton>
-            <NightlightIcon />
+          <IconButton onClick={() => setisdark(!isdark)}>
+            {isdark ? <WbSunnyIcon /> : <NightlightIcon />}
           </IconButton>
         </div>
       </div>
