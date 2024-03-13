@@ -257,6 +257,11 @@
   justify-content: space-between;
 }
 
+.createGroups-container input {
+  background-color: var(--foreground-color);
+  color: var(--primary-text-color);
+}
+
 .login-container {
   height: 90vh;
   width: 90vw;
