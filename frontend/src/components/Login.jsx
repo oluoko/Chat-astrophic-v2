@@ -101,6 +101,7 @@ const Login = () => {
           <div className="login-box">
             <p>Login to you Account</p>
             <TextField
+              onChange={changerHandler}
               id="outlined-basic"
               className="login-input"
               label="Enter Your Username"
@@ -110,6 +111,7 @@ const Login = () => {
               }}
             />
             <TextField
+              onChange={changerHandler}
               id="outlined-basic"
               label="Password"
               className="login-input"
@@ -148,6 +150,51 @@ const Login = () => {
               </Link>
             </p>
             {/* {logInStatus?(<Toaster key={logInStatus.key} message={logInStatus.msg}/>} */}
+          </div>
+        )}
+        {!showlogin && (
+          <div className="login-box">
+            <p className="login-text">Create you Account</p>
+            <TextField
+              onChange={changerHandler}
+              id="standard-basic"
+              label="Set Your Username"
+              variant="outlined"
+              color="secondary"
+              name="name"
+              helperText=""
+            />
+            <TextField
+              onChange={changerHandler}
+              id="standard-basic"
+              label="Enter Your Email Address"
+              variant="outlined"
+              color="secondary"
+              name="email"
+              helperText=""
+            />
+            <TextField
+              onChange={changerHandler}
+              id="outline-password-input"
+              label="Set Your Password"
+              type="password"
+              autoComplete="current-password"
+              color="secondary"
+              name="password"
+              helperText=""
+            />
+            <Butto variant="outlined" color="secondary" onClick={signUpHandler}>
+              Signup
+            </Butto>
+            <p>
+              Already have an Account?{" "}
+              <span className="hyper" onClick={setShowlogin(true)}>
+                Log in
+              </span>
+            </p>
+            {signInStatus ? (
+              <Toaster key={signInStatus.key} message={signInStatus.msg} />
+            ) : null}
           </div>
         )}
       </div>
