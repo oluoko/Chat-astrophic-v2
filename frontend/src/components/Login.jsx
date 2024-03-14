@@ -119,17 +119,35 @@ const Login = () => {
                 input: { color: "var(--primary-text-color)" },
               }}
             />
-            <Button className="login-input button" variant="outlined">
+            <Button
+              className="login-input button"
+              onClick={loginHandler}
+              isLoading
+              variant="outlined"
+            >
               Log In
             </Button>
 
             <p style={{ fontSize: "0.9rem" }}>
               {" "}
               Don't have an account?{" "}
-              <Link to="/signup" style={{ textDecorationLine: "none" }}>
+              {/* <span
+                className="hyper"
+                onClick={() => {
+                  setShowlogin(false);
+                }}
+              >Sigh Up</span> */}
+              <Link
+                to="/signup"
+                style={{ textDecorationLine: "none" }}
+                onClick={() => {
+                  setShowlogin(false);
+                }}
+              >
                 Sign up
               </Link>
             </p>
+            {/* {logInStatus?(<Toaster key={logInStatus.key} message={logInStatus.msg}/>} */}
           </div>
         )}
       </div>
