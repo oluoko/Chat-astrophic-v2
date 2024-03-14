@@ -86,44 +86,54 @@ const Login = () => {
     }
   };
   return (
-    <div className="login-container">
-      <div className="image-container">
-        <img src={logo} alt="logo" className="welcome-logo" />
-      </div>
-      <div className="login-box">
-        <p>Login to you Account</p>
-        <TextField
-          id="outlined-basic"
-          className="login-input"
-          label="Enter Your Username"
-          variant="outlined"
-          sx={{
-            input: { color: "var(--primary-text-color)" },
-          }}
-        />
-        <TextField
-          id="outlined-basic"
-          label="Password"
-          className="login-input"
-          type="password"
-          variant="outlined"
-          sx={{
-            input: { color: "var(--primary-text-color)" },
-          }}
-        />
-        <Button className="login-input button" variant="outlined">
-          Log In
-        </Button>
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loading}
+      >
+        <CircularProgress color="secondary" />
+      </Backdrop>
+      <div className="login-container">
+        <div className="image-container">
+          <img src={logo} alt="logo" className="welcome-logo" />
+        </div>
+        {showlogin && (
+          <div className="login-box">
+            <p>Login to you Account</p>
+            <TextField
+              id="outlined-basic"
+              className="login-input"
+              label="Enter Your Username"
+              variant="outlined"
+              sx={{
+                input: { color: "var(--primary-text-color)" },
+              }}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              className="login-input"
+              type="password"
+              variant="outlined"
+              sx={{
+                input: { color: "var(--primary-text-color)" },
+              }}
+            />
+            <Button className="login-input button" variant="outlined">
+              Log In
+            </Button>
 
-        <p style={{ fontSize: "0.9rem" }}>
-          {" "}
-          Don't have an account?{" "}
-          <Link to="/signup" style={{ textDecorationLine: "none" }}>
-            Sign up
-          </Link>
-        </p>
+            <p style={{ fontSize: "0.9rem" }}>
+              {" "}
+              Don't have an account?{" "}
+              <Link to="/signup" style={{ textDecorationLine: "none" }}>
+                Sign up
+              </Link>
+            </p>
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
