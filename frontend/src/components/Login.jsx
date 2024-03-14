@@ -1,5 +1,6 @@
 import logo from "../assets/chatting.png";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./myStyles.css";
 import { Button, TextField } from "@mui/material";
 
@@ -27,6 +28,14 @@ const Login = () => {
         <Button className="login-input button" variant="outlined">
           Log In
         </Button>
+
+        <p style={{ fontSize: "0.9rem" }}>
+          {" "}
+          Don't have an account?{" "}
+          <Link to="/signup" style={{ textDecorationLine: "none" }}>
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );

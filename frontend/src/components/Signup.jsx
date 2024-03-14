@@ -1,7 +1,7 @@
 import logo from "../assets/chatting.png";
 import React from "react";
 import "./myStyles.css";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
         <TextField
           id="outlined-basic"
           className="login-input"
-          label="Enter Your Full Name"
+          label="Set Your Username"
           variant="outlined"
         />
         <TextField
@@ -37,8 +37,11 @@ const Login = () => {
           Sign up
         </Button>
 
-        <p>
-          Already have an account ? <Link> Log in</Link>
+        <p style={{ fontSize: "0.9rem" }}>
+          Already have an account ?{" "}
+          <Link to="/" style={{ textDecorationLine: "none" }}>
+            Log in
+          </Link>
         </p>
       </div>
     </div>

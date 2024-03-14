@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import useLocalStorage from "use-local-storage";
 import "./App.css";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 import MainContainer from "./components/MainContainer";
 import Welcome from "./components/Welcome";
 import ChatArea from "./components/ChatArea";
@@ -18,6 +19,7 @@ function App() {
       <div className="App" data-theme={isDark ? "dark" : "light"}>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
             path="app"
             element={<MainContainer isdark={isDark} setisdark={setIsDark} />}
