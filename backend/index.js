@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const { default: mongoose } = require("mongoose");
+const userRoutes = require("./Routes/userRouters");
 
 const app = express();
 dotenv.config();
@@ -23,6 +24,7 @@ connectDb();
 app.get("/", (req, res) => {
   res.send("API is running");
 });
+app.use("user/", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
