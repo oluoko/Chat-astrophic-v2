@@ -183,9 +183,13 @@ const Login = () => {
               name="password"
               helperText=""
             />
-            <Butto variant="outlined" color="secondary" onClick={signUpHandler}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={signUpHandler}
+            >
               Signup
-            </Butto>
+            </Button>
             <p>
               Already have an Account?{" "}
               <span className="hyper" onClick={setShowlogin(true)}>
