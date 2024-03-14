@@ -4,7 +4,7 @@ import "./myStyles.css";
 import { Link } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 
-const Login = () => {
+const Signup = () => {
   return (
     <div className="login-container">
       <div className="image-container">
@@ -19,12 +19,18 @@ const Login = () => {
           label="Enter Your Email"
           type="email"
           variant="outlined"
+          sx={{
+            input: { color: "var(--primary-text-color)" },
+          }}
         />
         <TextField
           id="outlined-basic"
           className="login-input"
           label="Set Your Username"
           variant="outlined"
+          sx={{
+            input: { color: "var(--primary-text-color)" },
+          }}
         />
         <TextField
           id="outlined-basic"
@@ -32,6 +38,9 @@ const Login = () => {
           className="login-input"
           type="password"
           variant="outlined"
+          sx={{
+            input: { color: "var(--primary-text-color)" },
+          }}
         />
         <Button className="login-input button" variant="outlined">
           Sign up
@@ -48,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

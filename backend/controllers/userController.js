@@ -5,7 +5,7 @@ const expressAsyncHandler = require("express-async-handler");
 
 const loginController = () => {};
 
-const registerController = async (req, res) => {
+const registerController = expressAsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   // check for all fields
@@ -27,6 +27,6 @@ const registerController = async (req, res) => {
   }
 
   const user = await UserModel.create({ name, email, password });
-};
+});
 
 module.exports = { loginController, registerController };

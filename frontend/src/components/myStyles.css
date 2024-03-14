@@ -307,6 +307,7 @@
 .login-input {
   width: 60%;
   height: 10%;
+  color: var(--primary-text-color);
 }
 
 .list-container {

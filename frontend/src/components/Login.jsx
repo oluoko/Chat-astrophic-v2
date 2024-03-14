@@ -17,6 +17,9 @@ const Login = () => {
           className="login-input"
           label="Enter Your Username"
           variant="outlined"
+          sx={{
+            input: { color: "var(--primary-text-color)" },
+          }}
         />
         <TextField
           id="outlined-basic"
@@ -24,6 +27,9 @@ const Login = () => {
           className="login-input"
           type="password"
           variant="outlined"
+          sx={{
+            input: { color: "var(--primary-text-color)" },
+          }}
         />
         <Button className="login-input button" variant="outlined">
           Log In
