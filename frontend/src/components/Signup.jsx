@@ -1,8 +1,11 @@
 import logo from "../assets/chatting.png";
 import React from "react";
-import "./myStyles.css";
 import { Link } from "react-router-dom";
-import { Button, TextField } from "@mui/material";
+import "./myStyles.css";
+import { Backdrop, Button, CircularProgress, TextField } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const Signup = () => {
   return (

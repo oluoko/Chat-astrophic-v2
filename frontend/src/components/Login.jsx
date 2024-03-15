@@ -1,16 +1,17 @@
 import logo from "../assets/chatting.png";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./myStyles.css";
 import { Backdrop, Button, CircularProgress, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
+import Toast from "./Toast";
 
 const Login = () => {
   const [showlogin, setShowlogin] = useState(false);
   const { data, setData } = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
+
   const [logInStatus, setLogInStatus] = React.useState("");
   const [signInStatus, setSignInStatus] = React.useState("");
 
@@ -106,8 +107,15 @@ const Login = () => {
               className="login-input"
               label="Enter Your Username"
               variant="outlined"
+              name="name"
               sx={{
                 input: { color: "var(--primary-text-color)" },
+              }}
+              onKeyDown={(event) => {
+                if (event.code == "Enter") {
+                  // console.log(event);
+                  loginHandler();
+                }
               }}
             />
             <TextField
@@ -120,11 +128,17 @@ const Login = () => {
               sx={{
                 input: { color: "var(--primary-text-color)" },
               }}
+              name="password"
+              onKeyDown={(event) => {
+                if (event.code == "Enter") {
+                  // console.log(event);
+                  loginHandler();
+                }
+              }}
             />
             <Button
               className="login-input button"
               onClick={loginHandler}
-              isLoading
               variant="outlined"
             >
               Log In
@@ -133,13 +147,15 @@ const Login = () => {
             <p style={{ fontSize: "0.9rem" }}>
               {" "}
               Don't have an account?{" "}
-              {/* <span
+              <span
                 className="hyper"
                 onClick={() => {
                   setShowlogin(false);
                 }}
-              >Sigh Up</span> */}
-              <Link
+              >
+                Sigh Up
+              </span>
+              {/* <Link
                 to="/signup"
                 style={{ textDecorationLine: "none" }}
                 onClick={() => {
@@ -147,9 +163,11 @@ const Login = () => {
                 }}
               >
                 Sign up
-              </Link>
+              </Link> */}
             </p>
-            {/* {logInStatus?(<Toaster key={logInStatus.key} message={logInStatus.msg}/>} */}
+            {logInStatus ? (
+              <Toast key={logInStatus.key} message={logInStatus.msg} />
+            ) : null}
           </div>
         )}
         {!showlogin && (
@@ -163,6 +181,12 @@ const Login = () => {
               color="secondary"
               name="name"
               helperText=""
+              onKeyDown={(event) => {
+                if (event.code == "Enter") {
+                  // console.log(event);
+                  signUpHandler();
+                }
+              }}
             />
             <TextField
               onChange={changerHandler}
@@ -172,6 +196,12 @@ const Login = () => {
               color="secondary"
               name="email"
               helperText=""
+              onKeyDown={(event) => {
+                if (event.code == "Enter") {
+                  // console.log(event);
+                  signUpHandler();
+                }
+              }}
             />
             <TextField
               onChange={changerHandler}
@@ -181,7 +211,12 @@ const Login = () => {
               autoComplete="current-password"
               color="secondary"
               name="password"
-              helperText=""
+              onKeyDown={(event) => {
+                if (event.code == "Enter") {
+                  // console.log(event);
+                  signUpHandler();
+                }
+              }}
             />
             <Button
               variant="outlined"
@@ -197,7 +232,7 @@ const Login = () => {
               </span>
             </p>
             {signInStatus ? (
-              <Toaster key={signInStatus.key} message={signInStatus.msg} />
+              <Toast key={signInStatus.key} message={signInStatus.msg} />
             ) : null}
           </div>
         )}
