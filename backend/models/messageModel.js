@@ -6,6 +6,10 @@ const messageModel = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    content: {
+      type: String,
+      trim: true,
+    },
     receiver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
