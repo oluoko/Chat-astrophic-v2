@@ -98,7 +98,7 @@ const Login = () => {
         <div className="image-container">
           <img src={logo} alt="logo" className="welcome-logo" />
         </div>
-        {showlogin && (
+        {showlogin ? (
           <div className="login-box">
             <p>Login to you Account</p>
             <TextField
@@ -169,8 +169,7 @@ const Login = () => {
               <Toast key={logInStatus.key} message={logInStatus.msg} />
             ) : null}
           </div>
-        )}
-        {!showlogin && (
+        ) : (
           <div className="login-box">
             <p className="login-text">Create you Account</p>
             <TextField
