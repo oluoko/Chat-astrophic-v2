@@ -9,7 +9,8 @@ import Toast from "./Toast";
 
 const Login = () => {
   const [showlogin, setShowlogin] = useState(false);
-  const { data, setData } = useState({ name: "", email: "", password: "" });
+  const [data, setData] = useState({ name: "", email: "", password: "" });
+
   const [loading, setLoading] = useState(false);
 
   const [logInStatus, setLogInStatus] = React.useState("");
@@ -86,6 +87,7 @@ const Login = () => {
       setLoading(false);
     }
   };
+
   return (
     <>
       <Backdrop
@@ -102,7 +104,7 @@ const Login = () => {
           <div className="login-box">
             <p>Login to you Account</p>
             <TextField
-              onChange={changerHandler}
+              // onChange={changerHandler}
               id="outlined-basic"
               className="login-input"
               label="Enter Your Username"
@@ -149,21 +151,13 @@ const Login = () => {
               Don't have an account?{" "}
               <span
                 className="hyper"
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   setShowlogin(false);
                 }}
               >
-                Sigh Up
+                Sign Up
               </span>
-              {/* <Link
-                to="/signup"
-                style={{ textDecorationLine: "none" }}
-                onClick={() => {
-                  setShowlogin(false);
-                }}
-              >
-                Sign up
-              </Link> */}
             </p>
             {logInStatus ? (
               <Toast key={logInStatus.key} message={logInStatus.msg} />
@@ -176,6 +170,7 @@ const Login = () => {
               onChange={changerHandler}
               id="standard-basic"
               label="Set Your Username"
+              className="login-input"
               variant="outlined"
               color="secondary"
               name="name"
@@ -191,6 +186,7 @@ const Login = () => {
               onChange={changerHandler}
               id="standard-basic"
               label="Enter Your Email Address"
+              className="login-input"
               variant="outlined"
               color="secondary"
               name="email"
@@ -208,6 +204,7 @@ const Login = () => {
               label="Set Your Password"
               type="password"
               autoComplete="current-password"
+              className="login-input"
               color="secondary"
               name="password"
               onKeyDown={(event) => {
@@ -218,21 +215,22 @@ const Login = () => {
               }}
             />
             <Button
+              className="login-input button"
               variant="outlined"
-              color="secondary"
               onClick={signUpHandler}
             >
               Signup
             </Button>
-            <p>
+            <p style={{ fontSize: "0.9rem" }}>
               Already have an Account?{" "}
-              <span className="hyper" onClick={setShowlogin(true)}>
+              <span
+                className="hyper"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowlogin(true)}
+              >
                 Log in
               </span>
             </p>
-            {signInStatus ? (
-              <Toast key={signInStatus.key} message={signInStatus.msg} />
-            ) : null}
           </div>
         )}
       </div>
