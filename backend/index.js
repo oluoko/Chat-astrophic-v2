@@ -3,10 +3,12 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const { default: mongoose } = require("mongoose");
 const userRoutes = require("./Routes/userRouters");
+const cors = require("cors"); // Import cors module
 
 const app = express();
 dotenv.config();
 app.use(express.json());
+app.use(cors()); // Add cors middleware here
 
 const connectDb = async () => {
   try {

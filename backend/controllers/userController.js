@@ -2,6 +2,30 @@ const generateToken = require("../config/generateToken");
 const UserModel = require("../models/userModel");
 const expressAsyncHandler = require("express-async-handler");
 // Login
+// const loginController = expressAsyncHandler(async (req, res) => {
+//   console.log(req.body);
+//   const { name, password } = req.body;
+
+//   const user = await UserModel.findOne({ name });
+
+//   console.log("fetched user Data", user);
+//   console.log(await user.matchPassword(password));
+//   if (user && (await user.matchPassword(password))) {
+//     const response = {
+//       _id: user._id,
+//       name: user.name,
+//       email: user.email,
+//       isAdmin: user.isAdmin,
+//       token: generateToken(user._id),
+//     };
+//     console.log(response);
+//     res.json(response);
+//   } else {
+//     res.status(401);
+//     throw new Error("Invalid UserName or Password");
+//   }
+// });
+
 const loginController = expressAsyncHandler(async (req, res) => {
   console.log(req.body);
   const { name, password } = req.body;
@@ -9,20 +33,26 @@ const loginController = expressAsyncHandler(async (req, res) => {
   const user = await UserModel.findOne({ name });
 
   console.log("fetched user Data", user);
-  console.log(await user.matchPassword(password));
-  if (user && (await user.matchPassword(password))) {
-    const response = {
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-      token: generateToken(user._id),
-    };
-    console.log(response);
-    res.json(response);
+
+  if (user) {
+    const isPasswordMatch = await user.matchPassword(password);
+    if (isPasswordMatch) {
+      const response = {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        token: generateToken(user._id),
+      };
+      console.log(response);
+      res.json(response);
+    } else {
+      res.status(401);
+      throw new Error("Invalid Password");
+    }
   } else {
-    res.status(401);
-    throw new Error("Invalid UserName or Password");
+    res.status(404);
+    throw new Error("User not found");
   }
 });
 

@@ -31,7 +31,7 @@ const Login = () => {
         data,
         config
       );
-      console.log(response.data);
+
       setLogInStatus({ msg: "Success", key: response.data.userId });
       localStorage.setItem("userData", JSON.stringify(response.data));
       navigate("/app/welcome");
