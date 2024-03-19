@@ -173,6 +173,9 @@ const Login = () => {
               className="login-input"
               variant="outlined"
               color="secondary"
+              sx={{
+                input: { color: "var(--primary-text-color)" },
+              }}
               name="name"
               helperText=""
               onKeyDown={(event) => {
@@ -189,6 +192,9 @@ const Login = () => {
               className="login-input"
               variant="outlined"
               color="secondary"
+              sx={{
+                input: { color: "var(--primary-text-color)" },
+              }}
               name="email"
               helperText=""
               onKeyDown={(event) => {
@@ -206,6 +212,9 @@ const Login = () => {
               autoComplete="current-password"
               className="login-input"
               color="secondary"
+              sx={{
+                input: { color: "var(--primary-text-color)" },
+              }}
               name="password"
               onKeyDown={(event) => {
                 if (event.code == "Enter") {
