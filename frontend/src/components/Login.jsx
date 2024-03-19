@@ -9,36 +9,31 @@ import Toast from "./Toast";
 const Login = () => {
   const [showlogin, setShowlogin] = useState(false);
   const [data, setData] = useState({ name: "", email: "", password: "" });
-
   const [loading, setLoading] = useState(false);
-
   const [logInStatus, setLogInStatus] = useState("");
   const [signInStatus, setSignInStatus] = useState("");
-
   const navigate = useNavigate();
-  const changerHandler = (e) => {
+
+  const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const loginHandler = async (e) => {
+  const loginHandler = async () => {
     setLoading(true);
-    console.log(data);
     try {
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
-
       const response = await axios.post(
         "http://localhost:5000/user/login/",
         data,
         config
       );
-      console.log("Login : ", response);
-      setLogInStatus({ msg: "Success", key: Math.random() });
-      setLoading(false);
-      localStorage.setItem("userData", JSON.stringify(response));
+      console.log(response.data);
+      setLogInStatus({ msg: "Success", key: response.data.userId });
+      localStorage.setItem("userData", JSON.stringify(response.data));
       navigate("/app/welcome");
     } catch (error) {
       setLogInStatus({
@@ -46,7 +41,6 @@ const Login = () => {
         key: Math.random(),
       });
     }
-
     setLoading(false);
   };
 
@@ -58,33 +52,29 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-
       const response = await axios.post(
         "http://localhost:5000/user/register/",
         data,
         config
       );
-      console.log(response);
-      setSignInStatus({ msg: "Success", key: Math.random() });
+      setSignInStatus({ msg: "Success", key: response.data.userId });
+      localStorage.setItem("userData", JSON.stringify(response.data));
       navigate("/app/welcome");
-      localStorage.setItem("userData", JSON.stringify(response));
-      setLoading(false);
     } catch (error) {
-      console.log(error);
       if (error.response.status === 405) {
         setLogInStatus({
           msg: "User with this email ID already Exists",
           key: Math.random(),
         });
       }
-      if (error.response.status == 406) {
+      if (error.response.status === 406) {
         setLogInStatus({
           msg: "User Name already taken, please try another one",
           key: Math.random(),
         });
       }
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -103,7 +93,6 @@ const Login = () => {
           <div className="login-box">
             <p>Login to you Account</p>
             <TextField
-              // onChange={changerHandler}
               id="outlined-basic"
               className="login-input"
               label="Enter Your Username"
@@ -113,14 +102,13 @@ const Login = () => {
                 input: { color: "var(--primary-text-color)" },
               }}
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   loginHandler();
                 }
               }}
             />
             <TextField
-              onChange={changerHandler}
+              onChange={handleChange}
               id="outlined-basic"
               label="Password"
               className="login-input"
@@ -131,8 +119,7 @@ const Login = () => {
               }}
               name="password"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   loginHandler();
                 }
               }}
@@ -144,9 +131,7 @@ const Login = () => {
             >
               Log In
             </Button>
-
             <p style={{ fontSize: "0.9rem" }}>
-              {" "}
               Don't have an account?{" "}
               <span
                 className="hyper"
@@ -166,7 +151,7 @@ const Login = () => {
           <div className="login-box">
             <p className="login-text">Create you Account</p>
             <TextField
-              onChange={changerHandler}
+              onChange={handleChange}
               id="standard-basic"
               label="Set Your Username"
               className="login-input"
@@ -178,14 +163,13 @@ const Login = () => {
               name="name"
               helperText=""
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
             />
             <TextField
-              onChange={changerHandler}
+              onChange={handleChange}
               id="standard-basic"
               label="Enter Your Email Address"
               className="login-input"
@@ -197,14 +181,13 @@ const Login = () => {
               name="email"
               helperText=""
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
             />
             <TextField
-              onChange={changerHandler}
+              onChange={handleChange}
               id="outline-password-input"
               label="Set Your Password"
               type="password"
@@ -216,8 +199,7 @@ const Login = () => {
               }}
               name="password"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
