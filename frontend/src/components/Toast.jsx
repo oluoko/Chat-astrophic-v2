@@ -2,14 +2,15 @@ import React from "react";
 import { Alert, IconButton, Snackbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-const Toast = () => {
+const Toast = ({ message }) => {
   const [open, setOpen] = React.useState(true);
-  function handleClose(event, reason) {
+
+  const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     setOpen(false);
-  }
+  };
 
   return (
     <div>
@@ -21,11 +22,9 @@ const Toast = () => {
         open={open}
         autoHideDuration={3000}
         onClose={handleClose}
-        variant="warning"
         ContentProps={{
           "aria-describedby": "message-id",
         }}
-        message={message}
         action={[
           <IconButton key="close" onClick={handleClose}>
             <CloseIcon />
