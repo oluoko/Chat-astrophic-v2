@@ -1,6 +1,5 @@
 import logo from "../assets/chatting.png";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./myStyles.css";
 import { Backdrop, Button, CircularProgress, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +12,8 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const [logInStatus, setLogInStatus] = React.useState("");
-  const [signInStatus, setSignInStatus] = React.useState("");
+  const [logInStatus, setLogInStatus] = useState("");
+  const [signInStatus, setSignInStatus] = useState("");
 
   const navigate = useNavigate();
   const changerHandler = (e) => {
