@@ -7,7 +7,7 @@ import axios from "axios";
 import Toast from "./Toast";
 
 const Login = () => {
-  const [showlogin, setShowlogin] = useState(false);
+  const [showlogin, setShowlogin] = useState(true);
   const [data, setData] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [logInStatus, setLogInStatus] = useState("");
@@ -132,7 +132,7 @@ const Login = () => {
               Log In
             </Button>
             <p style={{ fontSize: "0.9rem" }}>
-              Don't have an account?{" "}
+              Don't halittleve an account?{" "}
               <span
                 className="hyper"
                 style={{ cursor: "pointer" }}
@@ -221,6 +221,9 @@ const Login = () => {
                 Log in
               </span>
             </p>
+            {logInStatus ? (
+              <Toast key={signInStatus.key} message={signInStatus.msg} />
+            ) : null}
           </div>
         )}
       </div>
