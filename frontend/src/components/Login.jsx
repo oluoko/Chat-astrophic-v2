@@ -33,7 +33,10 @@ const Login = () => {
         config
       );
 
-      setLogInStatus({ msg: "Success", key: response.data.userId });
+      setLogInStatus({
+        msg: "Success",
+        key: response.data.userId,
+      });
       localStorage.setItem("userData", JSON.stringify(response.data));
       navigate("/app/welcome");
     } catch (error) {
@@ -60,7 +63,7 @@ const Login = () => {
       );
       setSignInStatus({ msg: "Success", key: response.data.userId });
       localStorage.setItem("userData", JSON.stringify(response.data));
-      navigate("/app/welcome");
+      setShowlogin(true);
     } catch (error) {
       if (error.response.status === 405) {
         setLogInStatus({
@@ -225,7 +228,7 @@ const Login = () => {
                 Log in
               </span>
             </p>
-            {logInStatus ? (
+            {signInStatus ? (
               <Toast key={signInStatus.key} message={signInStatus.msg} />
             ) : null}
           </div>
