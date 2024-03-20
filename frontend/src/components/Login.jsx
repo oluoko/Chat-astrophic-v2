@@ -26,6 +26,7 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
+      console.log(data);
       const response = await axios.post(
         "http://localhost:5000/user/login/",
         data,
@@ -98,6 +99,8 @@ const Login = () => {
               label="Enter Your Username"
               variant="outlined"
               name="name"
+              value={data.name} // Bind value to state
+              onChange={handleChange} // Bind handleChange function to onChange event
               sx={{
                 input: { color: "var(--primary-text-color)" },
               }}
@@ -107,6 +110,7 @@ const Login = () => {
                 }
               }}
             />
+
             <TextField
               onChange={handleChange}
               id="outlined-basic"
