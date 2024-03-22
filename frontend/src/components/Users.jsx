@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ConversationsItem from "./ConversationsItem";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Users_Groups = () => {
+const Users = () => {
   return (
     <AnimatePresence>
       <motion.div
@@ -44,4 +44,4 @@ const Users_Groups = () => {
   );
 };
 
-export default Users_Groups;
+export default Users;
