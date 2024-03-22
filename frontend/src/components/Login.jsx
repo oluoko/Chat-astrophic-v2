@@ -26,24 +26,32 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-      console.log(data);
+
       const response = await axios.post(
         "http://localhost:5000/user/login/",
         data,
         config
       );
 
+      data.email = response.data.email;
+
       setLogInStatus({
-        msg: "Success",
-        key: response.data.userId,
+        msg: "Login successful",
+        key: response.data._id,
       });
+
+      console.log(data);
+
+      console.log(logInStatus);
+
       localStorage.setItem("userData", JSON.stringify(response.data));
       navigate("/app/welcome");
     } catch (error) {
       setLogInStatus({
         msg: "Invalid Username or Password",
-        key: Math.random(),
+        key: 1,
       });
+      console.log(logInStatus);
     }
     setLoading(false);
   };
@@ -61,20 +69,28 @@ const Login = () => {
         data,
         config
       );
-      setSignInStatus({ msg: "Success", key: response.data.userId });
+
+      setSignInStatus({
+        msg: "Sign up successful",
+        key: response.data._id,
+      });
+
       localStorage.setItem("userData", JSON.stringify(response.data));
+
       setShowlogin(true);
     } catch (error) {
       if (error.response.status === 405) {
+        console.log(response);
         setLogInStatus({
           msg: "User with this email ID already Exists",
-          key: Math.random(),
+          key: 2,
         });
       }
       if (error.response.status === 406) {
+        console.log(response);
         setLogInStatus({
           msg: "User Name already taken, please try another one",
-          key: Math.random(),
+          key: 3,
         });
       }
     }
